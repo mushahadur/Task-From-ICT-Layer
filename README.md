@@ -267,8 +267,8 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 ## Data Types<a name="data_types"></a>
 
 -Numeric Data Types
-    1. INTEGER Types
-        - TINYINT
+    -- 1. INTEGER Types
+        --- TINYINT
             - A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
             example
 
@@ -278,7 +278,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
                 );
             ```
 
-        - SMALLINT
+        --- SMALLINT
             - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
             example
 
