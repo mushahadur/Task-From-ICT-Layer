@@ -264,6 +264,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <p>MySQL is a popular open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) for managing and manipulating data. Developed by Oracle Corporation, MySQL is widely used for various applications and websites due to its reliability, performance, scalability, and ease of use.</p>
 
+
 ## Data Types<a name="data_types"></a>
 
 ### Numeric Data Types
@@ -278,33 +279,19 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
                 );
             ```
 
-
-
--Numeric Data Types
-    -- 1. INTEGER Types
-        --- TINYINT
-            - A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
-            example
+<h4>SMALLINT</h4>
+- Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
+            Example
 
             ```sql
                 CREATE TABLE example (
-                    id TINYINT UNSIGNED
+                   value SMALLINT
                 );
             ```
 
-        --- SMALLINT
-            - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
-            example
-
-            ```sql
-                CREATE TABLE example (
-                    value SMALLINT
-                );
-            ```
-
-        - MEDIUMINT
-            - Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned).
-            example
+<h4>MEDIUMINT</h4>
+- Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned)
+            Example
 
             ```sql
                 CREATE TABLE example (
@@ -312,9 +299,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
                 );
             ```
 
-        - INT/INTEGER
-            -  Commonly used for regular-sized integers, allowing values from -2147483648 to 2147483647 (signed) or 0 to 4294967295 (unsigned).
-            example
+<h4>INT/INTEGER</h4>
+- Commonly used for regular-sized integers, allowing values from -2147483648 to 2147483647 (signed) or 0 to 4294967295 (unsigned).
+            Example
 
             ```sql
                 CREATE TABLE example (
@@ -322,51 +309,62 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
                 );
             ```
 
-        - BIGINT
-            -  Stores large integers ranging from -9223372036854775808 to 9223372036854775807 (signed) or 0 to 18446744073709551615 (unsigned).
-            example
-
-            ```sql
-                CREATE TABLE example (
-                    population BIGINT UNSIGNED
-                );
-
-            ```
-
-    2. Fixed-Point Types:
-        - DECIMAL
-            -  Used for fixed-point numbers with exact precision and    scale. It allows for precise calculations involving decimal values.
-            Example:
+<h4>BIGINT</h4>
+- Stores large integers ranging from -9223372036854775808 to 9223372036854775807 (signed) or 0 to 18446744073709551615 (unsigned).
+            Example
 
             ```sql
                 CREATE TABLE example (
                     population BIGINT UNSIGNED
                 );
             ```
-            - In this example, price is a decimal number with a total of 10 digits, where 2 digits are reserved for decimal places.
 
 
-    3. Floating-Point Types:
-        - FLOAT:
-            -  Represents single-precision floating-point numbers, allowing approximate values with a range of -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38.
-            Example:
+### Fixed-Point Types
 
-            ```sql
-                CREATE TABLE example (
-                    value FLOAT
-                );
-            ```
-        - DOUBLE:
-            -  Stores double-precision floating-point numbers with a larger range compared to FLOAT, from -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308.
-            Example:
+<h4>DECIMAL</h4>
+- Used for fixed-point numbers with exact precision and    scale. It allows for precise calculations involving decimal values.
+            Example
 
             ```sql
                 CREATE TABLE example (
-                    amount DOUBLE
+                    population BIGINT UNSIGNED
                 );
             ```
+- In this example, price is a decimal number with a total of 10 digits, where 2 digits are reserved for decimal places.
+
+    
+
+###  Floating-Point Types:
+
+<h4>FLOAT</h4>
+    -  Represents single-precision floating-point numbers, allowing approximate values with a range of -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38.
+    Example:
+
+    ```sql
+        CREATE TABLE example (
+            value FLOAT
+        );
+    ```
+
+    <h4>DOUBLE</h4>
+
+    -  Stores double-precision floating-point numbers with a larger range compared to FLOAT, from -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308.
+    Example:
+
+    ```sql
+        CREATE TABLE example (
+             amount DOUBLE
+        );
+    ```
+
 
 -Numeric Data Types  
+
+<br/>
+<br/>
+
+
 
 <br/>
 <br/>
