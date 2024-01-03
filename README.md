@@ -17,10 +17,11 @@
     - [Raw PHP For Example](#raw_php_example)
   - [Laravel](#laravel)
     - [Laravel For Example](#laravel_example)
-  - [Using the with() method](#with-method)
-  - [Using the compact()](#compact)
-  - [Data pass to array function](#array_function)
-  - [Fetch the data in the controller](#fetch-the-data)
+- [MySql Database](#mySql_database )
+    - [Data Types](#data_types )
+- [Using the compact()](#compact)
+- [Data pass to array function](#array_function)
+- [Fetch the data in the controller](#fetch-the-data)
 - [Abstraction Vs Interfaces](#abstraction-interfaces)
 
         
@@ -36,7 +37,7 @@
 <p>
 In web development, a "session" refers to a way of maintaining stateful information about a user across multiple pages or interactions with a website. Sessions allow websites to recognize a user, even if they navigate between different pages or perform various actions during their visit.</p> 
 
-<br/>
+
 
 ## Raw PHP <a name="raw_php"></a>
 
@@ -70,6 +71,60 @@ $_SESSION = []; // Clear all session data
 
 ```
 
+<p> In raw PHP, you can use sessions and flash messages to handle user interactions and provide feedback. Here's an example of how you might implement session flashData in a simple PHP script:</p>
+
+```php
+<?php
+// Starting the session
+session_start();
+
+// Function to set flash messages
+function setFlashMessage($key, $message) {
+    $_SESSION[$key] = $message;
+}
+
+// Function to get and clear flash messages
+function getFlashMessage($key) {
+    $message = isset($_SESSION[$key]) ? $_SESSION[$key] : null;
+    unset($_SESSION[$key]); // Clear the message from session
+    return $message;
+}
+
+// Example usage:
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Process form submission (e.g., form submission in an e-commerce scenario)
+    
+    // Simulating a successful order placement
+    // Set a success flash message
+    setFlashMessage('success_message', 'Order placed successfully!');
+    
+    // Redirect to a confirmation page
+    header("Location: confirmation.php");
+    exit;
+}
+?>
+
+<!-- Confirmation.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Confirmation</title>
+</head>
+<body>
+    <?php
+    // Display flash messages
+    $successMessage = getFlashMessage('success_message');
+    if ($successMessage) {
+        echo '<div style="background-color: #dff0d8; padding: 10px; margin-bottom: 10px;">' . $successMessage . '</div>';
+    }
+    ?>
+    <h1>Order Confirmation Page</h1>
+    <!-- Other content of the confirmation page -->
+</body>
+</html>
+
+```
 
 <br/>
 
@@ -203,10 +258,103 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 ```
 
+<br/>
 
-<p>
-In web development, a "session" refers to a way of maintaining stateful information about a user across multiple pages or interactions with a website. Sessions allow websites to recognize a user, even if they navigate between different pages or perform various actions during their visit.</p> 
+# MySql Database<a name="mySql_database"></a>
 
+<p>MySQL is a popular open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) for managing and manipulating data. Developed by Oracle Corporation, MySQL is widely used for various applications and websites due to its reliability, performance, scalability, and ease of use.</p>
+
+## Data Types<a name="data_types"></a>
+
+-Numeric Data Types
+    1. INTEGER Types
+        - TINYINT
+            - A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
+            example
+
+            ```sql
+                CREATE TABLE example (
+                    id TINYINT UNSIGNED
+                );
+            ```
+
+        - SMALLINT
+            - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
+            example
+
+            ```sql
+                CREATE TABLE example (
+                    value SMALLINT
+                );
+            ```
+
+        - MEDIUMINT
+            - Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned).
+            example
+
+            ```sql
+                CREATE TABLE example (
+                    quantity MEDIUMINT UNSIGNED
+                );
+            ```
+
+        - INT/INTEGER
+            -  Commonly used for regular-sized integers, allowing values from -2147483648 to 2147483647 (signed) or 0 to 4294967295 (unsigned).
+            example
+
+            ```sql
+                CREATE TABLE example (
+                    amount INT
+                );
+            ```
+
+        - BIGINT
+            -  Stores large integers ranging from -9223372036854775808 to 9223372036854775807 (signed) or 0 to 18446744073709551615 (unsigned).
+            example
+
+            ```sql
+                CREATE TABLE example (
+                    population BIGINT UNSIGNED
+                );
+
+            ```
+
+    2. Fixed-Point Types:
+        - DECIMAL
+            -  Used for fixed-point numbers with exact precision and    scale. It allows for precise calculations involving decimal values.
+            Example:
+
+            ```sql
+                CREATE TABLE example (
+                    population BIGINT UNSIGNED
+                );
+            ```
+            - In this example, price is a decimal number with a total of 10 digits, where 2 digits are reserved for decimal places.
+
+
+    3. Floating-Point Types:
+        - FLOAT:
+            -  Represents single-precision floating-point numbers, allowing approximate values with a range of -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38.
+            Example:
+
+            ```sql
+                CREATE TABLE example (
+                    value FLOAT
+                );
+            ```
+        - DOUBLE:
+            -  Stores double-precision floating-point numbers with a larger range compared to FLOAT, from -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308.
+            Example:
+
+            ```sql
+                CREATE TABLE example (
+                    amount DOUBLE
+                );
+            ```
+
+-Numeric Data Types  
+
+<br/>
 <br/>
 
 
