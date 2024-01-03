@@ -348,7 +348,6 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 ```
 
 <h4>DOUBLE</h4>
-
     -  Stores double-precision floating-point numbers with a larger range compared to FLOAT, from -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308.
     Example:
 
