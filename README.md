@@ -17,7 +17,7 @@
     - [Raw PHP For Example](#raw_php_example)
   - [Laravel](#laravel)
     - [Laravel For Example](#laravel_example)
-- [Myphp Database](#myphp_database )
+- [Mybash Database](#mybash_database )
     - [Data Types](#data_types )
 - [Using the compact()](#compact)
 - [Data pass to array function](#array_function)
@@ -260,9 +260,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <br/>
 
-# Myphp Database<a name="myphp_database"></a>
+# Mybash Database<a name="mybash_database"></a>
 
-<p>Myphp is a popular open-source relational database management system (RDBMS) that uses Structured Query Language (php) for managing and manipulating data. Developed by Oracle Corporation, Myphp is widely used for various applications and websites due to its reliability, performance, scalability, and ease of use.</p>
+<p>Mybash is a popular open-source relational database management system (RDBMS) that uses Structured Query Language (bash) for managing and manipulating data. Developed by Oracle Corporation, Mybash is widely used for various applications and websites due to its reliability, performance, scalability, and ease of use.</p>
 
 
 ## Data Types<a name="data_types"></a>
@@ -273,7 +273,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 - A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
             Example
 
-            ```php
+            ```bash
                 CREATE TABLE example (
                     id TINYINT UNSIGNED
                 );
@@ -283,7 +283,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
             Example
 
-            ```php
+            ```bash
                 CREATE TABLE example (
                    value SMALLINT
                 );
@@ -293,7 +293,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 - Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned)
             Example
 
-            ```php
+            ```bash
                 CREATE TABLE example (
                     quantity MEDIUMINT UNSIGNED
                 );
@@ -303,7 +303,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 - Commonly used for regular-sized integers, allowing values from -2147483648 to 2147483647 (signed) or 0 to 4294967295 (unsigned).
             Example
 
-            ```php
+            ```bash
                 CREATE TABLE example (
                     amount INT
                 );
@@ -313,7 +313,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 - Stores large integers ranging from -9223372036854775808 to 9223372036854775807 (signed) or 0 to 18446744073709551615 (unsigned).
             Example
 
-            ```php
+            ```bash
                 CREATE TABLE example (
                     population BIGINT UNSIGNED
                 );
@@ -326,7 +326,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 - Used for fixed-point numbers with exact precision and    scale. It allows for precise calculations involving decimal values.
             Example
 
-            ```php
+            ```bash
                 CREATE TABLE example (
                     population BIGINT UNSIGNED
                 );
@@ -341,7 +341,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
     -  Represents single-precision floating-point numbers, allowing approximate values with a range of -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38.
     Example:
 
-    ```php
+    ```bash
         CREATE TABLE example (
             value FLOAT
         );
@@ -352,7 +352,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
     -  Stores double-precision floating-point numbers with a larger range compared to FLOAT, from -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308.
     Example:
 
-    ```php
+    ```bash
         CREATE TABLE example (
              amount DOUBLE
         );
@@ -378,7 +378,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 
 1.session & session flashData store , remove etc all things about session (raw PHP + Laravel)
-2.Myphp Database table column's Data Types. Depth knowledge about Double, float, int, enum , char, varchar, set, boolean. Create & modify database table using PHPMyAdmin.Avoid Laravel Migration Command 
+2.Mybash Database table column's Data Types. Depth knowledge about Double, float, int, enum , char, varchar, set, boolean. Create & modify database table using PHPMyAdmin.Avoid Laravel Migration Command 
 3.PHP array explode , implode , json encode , json decode
 4.JS array split, join , json parse, json stringify 
 5.Ajax basic , autocomplete using AJAX(Jquery)
