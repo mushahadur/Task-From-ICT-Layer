@@ -270,7 +270,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 ### Numeric Data Types
 
 <h4>TINYINT</h4>
-- A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
+-- A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
     <br/>
     Example:
     <br/>
@@ -282,7 +282,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 ```
 
 <h4>SMALLINT</h4>
-- Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
+-- Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
     <br/>
     Example:
     <br/>
