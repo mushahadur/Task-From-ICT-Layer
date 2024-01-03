@@ -264,6 +264,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <p>MySQL is a popular open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) for managing and manipulating data. Developed by Oracle Corporation, MySQL is widely used for various applications and websites due to its reliability, performance, scalability, and ease of use.</p>
 
+
 ## Data Types<a name="data_types"></a>
 
 ### Numeric Data Types
@@ -356,6 +357,15 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
              amount DOUBLE
         );
     ```
+
+
+-Numeric Data Types  
+
+<br/>
+<br/>
+
+
+
 
 
 -Numeric Data Types  
