@@ -271,7 +271,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <h4>TINYINT</h4>
 - A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
-            Example
+    <br/>
+    Example:
+    <br/>
 
 ```sql
     CREATE TABLE example (
@@ -281,7 +283,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <h4>SMALLINT</h4>
 - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
-            Example
+    <br/>
+    Example:
+    <br/>
 
 ```sql
     CREATE TABLE example (
@@ -291,7 +295,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <h4>MEDIUMINT</h4>
 - Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned)
-            Example
+    <br/>
+    Example:
+    <br/>
 
 ```sql
     CREATE TABLE example (
@@ -301,7 +307,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <h4>INT/INTEGER</h4>
 - Commonly used for regular-sized integers, allowing values from -2147483648 to 2147483647 (signed) or 0 to 4294967295 (unsigned).
-            Example
+    <br/>
+    Example:
+    <br/>
 
 ```sql
     CREATE TABLE example (
@@ -311,7 +319,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <h4>BIGINT</h4>
 - Stores large integers ranging from -9223372036854775808 to 9223372036854775807 (signed) or 0 to 18446744073709551615 (unsigned).
-            Example
+    <br/>
+    Example:
+    <br/>
 
 ```sql
     CREATE TABLE example (
@@ -324,7 +334,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <h4>DECIMAL</h4>
 - Used for fixed-point numbers with exact precision and    scale. It allows for precise calculations involving decimal values.
-            Example
+            <br/>
+    Example:
+    <br/>
 
 ```sql
     CREATE TABLE example (
@@ -339,7 +351,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <h4>FLOAT</h4>
     -  Represents single-precision floating-point numbers, allowing approximate values with a range of -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38.
+   <br/>
     Example:
+    <br/>
 
 ```sql
     CREATE TABLE example (
@@ -349,7 +363,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 <h4>DOUBLE</h4>
     -  Stores double-precision floating-point numbers with a larger range compared to FLOAT, from -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308.
+    <br/>
     Example:
+    <br/>
 
 ```sql
     CREATE TABLE example (
