@@ -30,6 +30,26 @@
 <p>The tasks you've outlined cover a comprehensive range of web development topics, from foundational PHP and database management to JavaScript, AJAX, Vue.js, Nuxt.js, and various data storage techniques like local storage and cookies. These tasks span server-side scripting, front-end development, and data handling, providing a holistic view of essential web development skills and technologies. Each task delves into specific areas such as sessions, database design, array manipulation, AJAX, front-end frameworks like Vue.js and Nuxt.js, and client-side storage mechanisms like local storage and cookies. These tasks collectively offer a broad understanding of web development fundamentals, client-server interaction, and modern JavaScript frameworks.</p> 
 
 <br/>
+
+# List of topic
+
+ | SI No         | Topics                 |
+ | ------------ | ---------------------- |
+ | 01 | session & session flashData store , remove etc all things about session (raw PHP + Laravel)  |
+ | 02 | MySql Database table column's Data Types. Depth knowledge about Double, float, int, enum , char, varchar, set, boolean. Create & modify database table using PHPMyAdmin.Avoid Laravel Migration Command |
+ | 03 | PHP array explode , implode , json encode , json decode|
+ | 04 | JS array split, join , json parse, json stringify |
+ | 05 | Ajax basic , autocomplete using AJAX(Jquery) |
+ | 06 | append using raw js or jquery |
+ | 07 | Vue js basic , Vue Router , Vue Lifecycle hooks ,API calling in Vue js  |
+ | 08 | Nuxt js basic , Nuxt Server API , API calling in Nuxt Js |
+ | 09 | Datatable JS basic knowledge |
+ | 10 | Server Side Rendering using Datatable JS |
+ | 11 | javascript localStorage and cookies (store data , remove data) |
+ | 12 | browser localstorage & browser session storage, store and remove data. create an example of localstorage using Vue js or Nuxt js |
+
+
+<br/>
 <br/>
 
 # Session & Session flashData <a name="session_flashData"></a>
