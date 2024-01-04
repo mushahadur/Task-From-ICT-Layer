@@ -19,7 +19,7 @@
     - [Laravel For Example](#laravel_example)
 - [MySql Database](#mySql_database )
     - [Data Types](#data_types )
-- [Using the compact()](#compact)
+- [PHP array functions ](#php_array_functions )
 - [Data pass to array function](#array_function)
 - [Fetch the data in the controller](#fetch-the-data)
 - [Abstraction Vs Interfaces](#abstraction-interfaces)
@@ -774,9 +774,115 @@ ADD COLUMN new_column INT;
 
 ```
 
-
-
 <br/>
+
+# PHP array functions <a name="php_array_functions"></a>
+
+- explode()
+- implode()
+- json_encode()
+- json_decode()
+
+<h4>explode()</h4>
+Usage: The explode() function splits a string into an array based on a specified delimiter.
+<br/>
+Syntax: explode(separator, string, limit).
+<br/>
+
+#### Example:
+
+```php
+$str = "Apple,Orange,Banana";
+$arr = explode(",", $str);
+print_r($arr);
+
+```
+#### Output:
+
+```csharp
+Array
+(
+    [0] => Apple
+    [1] => Orange
+    [2] => Banana
+)
+
+```
+
+<h4>implode() (or join())</h4>
+Usage: The implode() function joins elements of an array into a single string using a specified delimiter.
+<br/>
+Syntax: implode(separator, array).
+<br/>
+
+#### Example:
+
+```php
+$arr = array("Apple", "Orange", "Banana");
+$str = implode(", ", $arr);
+echo $str;
+
+```
+#### Output:
+
+```mathematica
+Apple, Orange, Banana
+
+```
+
+
+<h4>json_encode()</h4>
+Usage: The json_encode() function converts a PHP value (array, object) into a JSON string.
+<br/>
+Syntax: json_encode(value, options, depth).
+<br/>
+
+#### Example:
+
+```php
+$data = array("name" => "John", "age" => 30, "city" => "New York");
+$json = json_encode($data);
+echo $json;
+
+```
+#### Output:
+
+```json
+{"name":"John","age":30,"city":"New York"}
+
+```
+
+<h4>json_decode()</h4>
+Usage: The json_decode() function decodes a JSON string into a PHP value (object or associative array).
+<br/>
+Syntax: json_decode(json_string, assoc, depth, options).
+<br/>
+
+#### Example:
+
+```php
+$json = '{"name":"John","age":30,"city":"New York"}';
+$data = json_decode($json, true); // Passing true returns an associative array
+print_r($data);
+
+```
+#### Output:
+
+```csharp
+Array
+(
+    [name] => John
+    [age] => 30
+    [city] => New York
+)
+
+```
+
+<p>
+These functions are commonly used in PHP to manipulate strings, arrays, and JSON data. explode() and implode() are useful for string manipulations, while json_encode() and json_decode() are used to convert PHP data to and from the JSON format, facilitating data exchange between PHP and other systems that use JSON.</p> 
+
+
+
 <br/><br/>
 <br/>
   
@@ -788,17 +894,3 @@ ADD COLUMN new_column INT;
 
 
 
-
-
-1.session & session flashData store , remove etc all things about session (raw PHP + Laravel)
-2.MySql Database table column's Data Types. Depth knowledge about Double, float, int, enum , char, varchar, set, boolean. Create & modify database table using PHPMyAdmin.Avoid Laravel Migration Command 
-3.PHP array explode , implode , json encode , json decode
-4.JS array split, join , json parse, json stringify 
-5.Ajax basic , autocomplete using AJAX(Jquery)
-6.append using raw js or jquery
-7.Vue js basic , Vue Router , Vue Lifecycle hooks ,API calling in Vue js
-8.Nuxt js basic , Nuxt Server API , API calling in Nuxt Js
-9.Datatable JS basic knowledge
-10.Server Side Rendering using Datatable JS
-11.javascript localStorage and cookies (store data , remove data)
-12.browser localstorage & browser session storage, store and remove data. create an example of localstorage using Vue js or Nuxt js
