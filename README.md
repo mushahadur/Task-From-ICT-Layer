@@ -269,7 +269,9 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 ### Numeric Data Types
 
-<h4>TINYINT</h4>
+#### 1. INTEGER Types:
+
+<h5>TINYINT</h5>
     - A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
     <br/>
     Example:
@@ -281,7 +283,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
     );
 ```
 
-<h4>SMALLINT</h4>
+<h5>SMALLINT</h5>
     - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
     <br/>
     Example:
@@ -292,6 +294,118 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
         value SMALLINT
     );
 ```
+
+<h5>MEDIUMINT</h5>
+- Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned)
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+        quantity MEDIUMINT UNSIGNED
+    );
+```
+
+<h5>INT/INTEGER</h5>
+- Commonly used for regular-sized integers, allowing values from -2147483648 to 2147483647 (signed) or 0 to 4294967295 (unsigned).
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+        amount INT
+    );
+```
+
+<h5>BIGINT</h5>
+- Stores large integers ranging from -9223372036854775808 to 9223372036854775807 (signed) or 0 to 18446744073709551615 (unsigned).
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+        population BIGINT UNSIGNED
+    );
+```
+
+
+#### 2. Fixed-Point Types
+
+<h5>DECIMAL</h5>
+- Used for fixed-point numbers with exact precision and    scale. It allows for precise calculations involving decimal values.
+            <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+        population BIGINT UNSIGNED
+    );
+```
+- In this example, price is a decimal number with a total of 10 digits, where 2 digits are reserved for decimal places.
+
+    
+
+####  3. Floating-Point Types:
+
+<h5>FLOAT</h5>
+    -  Represents single-precision floating-point numbers, allowing approximate values with a range of -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38.
+   <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+        value FLOAT
+    );
+```
+
+<h5>DOUBLE</h5>
+    -  Stores double-precision floating-point numbers with a larger range compared to FLOAT, from -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+            amount DOUBLE
+    );
+``` 
+
+
+
+### String Data Types
+
+### 1. CHAR Data Types
+
+<h5>CHAR</h5>
+    - Fixed-length character string that stores a specific number of characters. The maximum length ranges from 0 to 255 characters.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+    code CHAR(5)
+);
+
+```
+
+<h5>SMALLINT</h5>
+    - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+        value SMALLINT
+    );
+```
+In this example, code is a fixed-length string that can store up to 5 characters.
 
 <h4>MEDIUMINT</h4>
 - Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned)
@@ -376,17 +490,10 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 
 -Numeric Data Types  
 
-<br/>
-<br/>
-
-
-
-
-
--Numeric Data Types  
 
 <br/>
 <br/>
+
 
 
 
