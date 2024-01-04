@@ -1188,8 +1188,7 @@ Now call the Student Controller method addStudent
 
 # Append using raw js or jquery <a name="append_using"></a>
 
-<p>The `append()` method in both raw JavaScript and jQuery is used to add content or elements inside another element. It's commonly used to dynamically add HTML content or elements to a specified DOM element.</p>
-
+The `append()` method in both raw JavaScript and jQuery is used to add content or elements inside another element. It's commonly used to dynamically add HTML content or elements to a specified DOM element.
 <h3>Raw JavaScript Example:</h3>
 Suppose you have an HTML structure like this:
 
