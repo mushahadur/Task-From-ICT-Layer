@@ -783,7 +783,9 @@ ADD COLUMN new_column INT;
 - json_encode()
 - json_decode()
 
+
 <h4>explode()</h4>
+
 Usage: The explode() function splits a string into an array based on a specified delimiter.
 <br/>
 Syntax: explode(separator, string, limit).
@@ -810,6 +812,7 @@ Array
 ```
 
 <h4>implode() (or join())</h4>
+
 Usage: The implode() function joins elements of an array into a single string using a specified delimiter.
 <br/>
 Syntax: implode(separator, array).
@@ -832,6 +835,7 @@ Apple, Orange, Banana
 
 
 <h4>json_encode()</h4>
+
 Usage: The json_encode() function converts a PHP value (array, object) into a JSON string.
 <br/>
 Syntax: json_encode(value, options, depth).
@@ -853,6 +857,7 @@ echo $json;
 ```
 
 <h4>json_decode()</h4>
+
 Usage: The json_decode() function decodes a JSON string into a PHP value (object or associative array).
 <br/>
 Syntax: json_decode(json_string, assoc, depth, options).
