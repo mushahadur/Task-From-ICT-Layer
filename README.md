@@ -23,6 +23,7 @@
 - [JavaScript array methods](#js_array_methods )
 - [Ajax Basic](#ajax_basic)
     - [Autocomplete using AJAX](#autocomplete_using_ajax)
+- [Append using raw js or jquery](#append_using)
 
         
 # Introduction <a name="introduction"></a>
@@ -1074,7 +1075,7 @@ HTML body tag
     </div>
 ```
 
-when hit the Save Student button then id="btnSubmit" pass to data from all input field, then cach the JavaScript function
+when hit the Save Student button then id=`btnSubmit` pass to data from all input field, then cach the JavaScript function
 
 #### Step 02:
 
@@ -1178,6 +1179,68 @@ Now call the Student Controller method addStudent
 
 # Autocomplete using AJAX <a name="autocomplete_using_ajax"></a>
 
+<br/>
+  
+
+
+<br/>
+<br/>
+
+# Append using raw js or jquery <a name="append_using"></a>
+
+<p>The `append()` method in both raw JavaScript and jQuery is used to add content or elements inside another element. It's commonly used to dynamically add HTML content or elements to a specified DOM element.</p>
+
+<h3>Raw JavaScript Example:</h3>
+Suppose you have an HTML structure like this:
+
+```html
+<div id="container">
+  <p>Initial content</p>
+</div>
+<button onclick="appendToContainer()">Append Content</button>
+
+```
+We can use raw JavaScript to append content inside the #container element:
+
+```javascript
+function appendToContainer() {
+  var container = document.getElementById("container");
+  var newContent = document.createElement("p");
+  newContent.textContent = "Appended content";
+  container.appendChild(newContent);
+}
+
+```
+
+This JavaScript function `appendToContainer()` finds the element with the ID `container`, creates a new paragraph element (`<p>`) with the text "Appended content", and appends it inside the `#container` element when the button is clicked.
+
+
+<h3>jQuery Example:</h3>
+If you're using jQuery, here's how you would achieve the same functionality:
+HTML structure:
+
+```html
+<div id="container">
+  <p>Initial content</p>
+</div>
+<button id="appendButton">Append Content</button>
+
+```
+
+jQuery code:
+
+```javascript
+$(document).ready(function() {
+  $("#appendButton").click(function() {
+    $("#container").append("<p>Appended content</p>");
+  });
+});
+
+```
+
+This jQuery code waits for the document to be ready and then attaches a click event listener to the button with the ID `appendButton`. When the button is clicked, it uses the `append()` method to add a new paragraph element containing "Appended content" inside the `#container.`
+
+Both raw JavaScript and jQuery `append()` methods accomplish similar tasks: adding new content dynamically to an HTML element. The choice between raw JavaScript and jQuery often depends on project requirements, familiarity with the library, or specific browser compatibility concerns. However, native JavaScript tends to be lighter, while jQuery simplifies complex DOM manipulations and offers cross-browser compatibility.
 
 
 
