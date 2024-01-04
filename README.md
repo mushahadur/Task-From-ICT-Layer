@@ -21,8 +21,8 @@
     - [Data Types](#data_types )
 - [PHP array functions ](#php_array_functions )
 - [JavaScript array methods](#js_array_methods )
-- [Fetch the data in the controller](#fetch-the-data)
-- [Abstraction Vs Interfaces](#abstraction-interfaces)
+- [Ajax Basic](#ajax_basic)
+    - [Autocomplete using AJAX](#autocomplete_using_ajax)
 
         
 # Introduction <a name="introduction"></a>
@@ -982,7 +982,7 @@ console.log(jsonStr);
 ```
 #### Output:
 
-```json
+```css
 '{"name":"John","age":30,"city":"New York"}'
 
 ```
@@ -992,6 +992,195 @@ console.log(jsonStr);
 
 
 <br/>
+
+
+
+
+# Ajax Basic <a name="ajax_basic"></a>
+
+<p>AJAX (Asynchronous JavaScript and XML) is a powerful technique used in web development to create asynchronous requests to a server from a web page without requiring a page refresh.</p>
+
+### Environmet setup
+
+#### Step 01:
+For head tag
+
+```css
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+     <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+```
+
+#### Step 02:
+For body tag (put it just inside the closing body tags)
+
+```javascript
+<script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+<script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+</script>
+```
+### Insert data
+
+#### Step 01:
+
+HTML body tag
+
+```html
+    <div class="modal fade" id="studentModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="text-center text-primary" id="addModalLabel">Student Form</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+                <div class="text-center errorMessage"></div>
+                <form id="my-form">
+                    @csrf
+                    <div class="modal-body">
+                        <div class="errMessContainer"></div>
+                        <div class="form-group row mb-3">
+                            <label class="col-form-label col-md-3">Name</label>
+                            <div class="col-md-9">
+                                <input type="text" id="name" name="name" class="form-control" placeholder="Enter Name" />
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label class="col-form-label col-md-3">Email</label>
+                            <div class="col-md-9">
+                                <input type="email" id="email"  name="email" class="form-control" placeholder="Enter Email" />
+                            </div>
+                        </div>
+                        <div class="form-group row mb-3">
+                            <label class="col-form-label col-md-3">Course</label>
+                            <div class="col-md-9">
+                                <input type="text" id="course"  name="course" class="form-control" placeholder="Enter Course" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" id="btnSubmit" class="btn btn-success">Save Student Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+```
+
+when hit the Save Student button then id="btnSubmit" pass to data from all input field, then cach the JavaScript function
+
+#### Step 02:
+
+JavaScript function
+
+```javascript
+<script>
+    $(document).ready(function (){
+        $(document).on('click', '#btnSubmit', function (e){
+            e.preventDefault();
+            let name = $('#name').val();
+            let email = $('#email').val();
+            let course = $('#course').val();
+            $.ajax({
+                url:"{{route('addStudent')}}",
+                method:"POST",
+                data: {name:name, email:email, course:course},
+                success:function(res){
+                    if(res.status == 'success'){
+                        $('#studentModal').modal('hide');
+                        $('#my-form')[0].reset();
+                        $('.table').load(location.href+' .table');
+                        Command: toastr["success"]("New Student Added.", "success")
+
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-top-center",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        }
+                    }
+                }, error:function(err){
+                    let error = err.responseJSON;
+                    $.each(error.errors, function (index, value){
+                        $('.errorMessage').append('<span class="text-danger">'+value+'</span>'+'</br>');
+                    });
+                }
+            });
+        });
+    });
+</script>
+```
+when call the ajax function then pass data by route url
+
+#### Step 03:
+
+```php
+Route::post('/add-student', [StudentController::class, 'addStudent'])->name('addStudent');
+```
+Now call the Student Controller method addStudent
+
+#### Step 04:
+
+```php
+   public function addStudent(Request $request){
+       $request->validate(
+           [
+               'name'=>'required | unique:students',
+               'email'=>'required | unique:students',
+               'course'=>'required ',
+           ],
+           [
+               'name.required'=>'Name is Required',
+               'name.unique'=>'You are Already Existed',
+               'email.required'=>'Email is Required',
+               'email.unique'=>'Email is Already Existed',
+               'course.required'=>'Course is Required ',
+           ]
+       );
+
+       $student = new Student();
+       $student->name = $request->name;
+       $student->email = $request->email;
+       $student->course = $request->course;
+       $student->save();
+       return response()->json([
+            'status' => 'success',
+       ]);
+   }
+```
+
+
+
+
+
+
+
+
+
+
+# Autocomplete using AJAX <a name="autocomplete_using_ajax"></a>
+
+
+
+
 <br/>
   
 
