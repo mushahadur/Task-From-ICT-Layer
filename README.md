@@ -265,13 +265,12 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
 <p>MySQL is a popular open-source relational database management system (RDBMS) that uses Structured Query Language (SQL) for managing and manipulating data. Developed by Oracle Corporation, MySQL is widely used for various applications and websites due to its reliability, performance, scalability, and ease of use.</p>
 
 
-## Data Types<a name="data_types"></a>
+# Data Types<a name="data_types"></a>
 
-### Numeric Data Types
+## Numeric Data Types
 
-#### 1. INTEGER Types:
-
-<h5>TINYINT</h5>
+### 1. INTEGER Types:
+<h4>TINYINT</h4>
     - A very small integer that can store values from -128 to 127 (signed) or 0 to 255 (unsigned).
     <br/>
     Example:
@@ -283,7 +282,7 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
     );
 ```
 
-<h5>SMALLINT</h5>
+<h4>SMALLINT</h4>
     - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
     <br/>
     Example:
@@ -294,118 +293,6 @@ $orderDetails = $request->session()->get("order.$order_id"); // Accessing order 
         value SMALLINT
     );
 ```
-
-<h5>MEDIUMINT</h5>
-- Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned)
-    <br/>
-    Example:
-    <br/>
-
-```sql
-    CREATE TABLE example (
-        quantity MEDIUMINT UNSIGNED
-    );
-```
-
-<h5>INT/INTEGER</h5>
-- Commonly used for regular-sized integers, allowing values from -2147483648 to 2147483647 (signed) or 0 to 4294967295 (unsigned).
-    <br/>
-    Example:
-    <br/>
-
-```sql
-    CREATE TABLE example (
-        amount INT
-    );
-```
-
-<h5>BIGINT</h5>
-- Stores large integers ranging from -9223372036854775808 to 9223372036854775807 (signed) or 0 to 18446744073709551615 (unsigned).
-    <br/>
-    Example:
-    <br/>
-
-```sql
-    CREATE TABLE example (
-        population BIGINT UNSIGNED
-    );
-```
-
-
-#### 2. Fixed-Point Types
-
-<h5>DECIMAL</h5>
-- Used for fixed-point numbers with exact precision and    scale. It allows for precise calculations involving decimal values.
-            <br/>
-    Example:
-    <br/>
-
-```sql
-    CREATE TABLE example (
-        population BIGINT UNSIGNED
-    );
-```
-- In this example, price is a decimal number with a total of 10 digits, where 2 digits are reserved for decimal places.
-
-    
-
-####  3. Floating-Point Types:
-
-<h5>FLOAT</h5>
-    -  Represents single-precision floating-point numbers, allowing approximate values with a range of -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38.
-   <br/>
-    Example:
-    <br/>
-
-```sql
-    CREATE TABLE example (
-        value FLOAT
-    );
-```
-
-<h5>DOUBLE</h5>
-    -  Stores double-precision floating-point numbers with a larger range compared to FLOAT, from -1.7976931348623157E+308 to -2.2250738585072014E-308, 0, and 2.2250738585072014E-308 to 1.7976931348623157E+308.
-    <br/>
-    Example:
-    <br/>
-
-```sql
-    CREATE TABLE example (
-            amount DOUBLE
-    );
-``` 
-
-
-
-### String Data Types
-
-### 1. CHAR Data Types
-
-<h5>CHAR</h5>
-    - Fixed-length character string that stores a specific number of characters. The maximum length ranges from 0 to 255 characters.
-    <br/>
-    Example:
-    <br/>
-
-```sql
-    CREATE TABLE example (
-    code CHAR(5)
-);
-
-```
-
-<h5>SMALLINT</h5>
-    - Stores small integers ranging from -32768 to 32767 (signed) or 0 to 65535 (unsigned).
-    <br/>
-    Example:
-    <br/>
-
-```sql
-    CREATE TABLE example (
-        value SMALLINT
-    );
-```
-In this example, code is a fixed-length string that can store up to 5 characters.
 
 <h4>MEDIUMINT</h4>
 - Allows medium-sized integers ranging from -8388608 to 8388607 (signed) or 0 to 16777215 (unsigned)
@@ -444,7 +331,7 @@ In this example, code is a fixed-length string that can store up to 5 characters
 ```
 
 
-### Fixed-Point Types
+### 2. Fixed-Point Types
 
 <h4>DECIMAL</h4>
 - Used for fixed-point numbers with exact precision and    scale. It allows for precise calculations involving decimal values.
@@ -461,7 +348,7 @@ In this example, code is a fixed-length string that can store up to 5 characters
 
     
 
-###  Floating-Point Types:
+### 3. Floating-Point Types:
 
 <h4>FLOAT</h4>
     -  Represents single-precision floating-point numbers, allowing approximate values with a range of -3.402823466E+38 to -1.175494351E-38, 0, and 1.175494351E-38 to 3.402823466E+38.
@@ -485,7 +372,121 @@ In this example, code is a fixed-length string that can store up to 5 characters
     CREATE TABLE example (
             amount DOUBLE
     );
+``` 
+
+
+
+## String Data Types
+### 1. CHAR Types
+
+<h4>CHAR</h4>
+    - Fixed-length character string that stores a specific number of characters. The maximum length ranges from 0 to 255 characters.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+    code CHAR(5)
+);
+
 ```
+In this example, code is a fixed-length string that can store up to 5 characters.
+
+
+### 2. VARCHAR Types
+
+<h4>VARCHAR</h4>
+    - Variable-length character string that stores characters up to a defined maximum length. It's more efficient for shorter strings and allows for more flexible storage compared to CHAR.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+    name VARCHAR(50)
+);
+
+```
+Here, name is a variable-length string that can store up to 50 characters.
+
+
+### 3. TEXT  Types
+
+<h4>TEXT, MEDIUMTEXT, LONGTEXT</h4>
+    - These types are used for storing large amounts of text data, with varying maximum lengths.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+    description TEXT
+);
+
+```
+The description column is suitable for holding a large volume of textual information.
+
+
+### 4. Binary Strings  Types
+
+<h4>BINARY</h4>
+    - Fixed-length binary string, similar to CHAR but stores binary byte strings.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     binary_data BINARY(20)
+);
+
+```
+
+<h4>VARBINARY</h4>
+    - Variable-length binary string, similar to VARCHAR but stores binary byte strings.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     binary_file VARBINARY(1000)
+);
+
+```
+
+
+### 5. Enumeration and Set  Types
+
+<h4>ENUM</h4>
+    - A column that can have one of a set of predefined values.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     status ENUM('Active', 'Inactive', 'Pending')
+);
+
+```
+
+<h4>SET</h4>
+    - Similar to ENUM but allows multiple values to be selected from a predefined set of values.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     preferences SET('Email', 'SMS', 'Push Notification')
+);
+
+```
+
+
+
 
 
 -Numeric Data Types  
