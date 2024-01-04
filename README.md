@@ -20,7 +20,7 @@
 - [MySql Database](#mySql_database )
     - [Data Types](#data_types )
 - [PHP array functions ](#php_array_functions )
-- [Data pass to array function](#array_function)
+- [JavaScript array methods](#js_array_methods )
 - [Fetch the data in the controller](#fetch-the-data)
 - [Abstraction Vs Interfaces](#abstraction-interfaces)
 
@@ -888,7 +888,110 @@ These functions are commonly used in PHP to manipulate strings, arrays, and JSON
 
 
 
-<br/><br/>
+<br/>
+
+
+<br/>
+
+# JavaScript array methods <a name="js_array_methods"></a>
+
+- split()
+- join()
+- JSON.parse()
+- JSON.stringify()
+
+
+<h3>split()</h3>
+Usage: The split() method splits a string into an array of substrings based on a specified separator and returns the new array.
+<br/>
+Syntax: string.split(separator, limit).
+<br/>
+
+#### Example:
+
+```php
+var str = "Apple,Orange,Banana";
+var arr = str.split(",");
+console.log(arr);
+
+```
+#### Output:
+
+```css
+["Apple", "Orange", "Banana"]
+
+```
+
+
+<h3>join()</h3>
+Usage: The join() method joins all elements of an array into a string using a specified separator.
+<br/>
+Syntax: array.join(separator).
+<br/>
+
+#### Example:
+
+```php
+var arr = ["Apple", "Orange", "Banana"];
+var str = arr.join(", ");
+console.log(str);
+
+```
+#### Output:
+
+```arduino
+"Apple, Orange, Banana"
+
+```
+
+
+<h3>JSON.parse()</h3>
+Usage: The JSON.parse() method parses a JSON string and converts it into a JavaScript object.
+<br/>
+Syntax: JSON.parse(jsonString).
+<br/>
+
+#### Example:
+
+```javascript
+var jsonStr = '{"name": "John", "age": 30, "city": "New York"}';
+var obj = JSON.parse(jsonStr);
+console.log(obj);
+
+```
+#### Output:
+
+```css
+{ name: 'John', age: 30, city: 'New York' }
+
+```
+
+<h3>JSON.stringify()</h3>
+Usage: The JSON.stringify() method converts a JavaScript object into a JSON string
+<br/>
+Syntax: JSON.stringify(value, replacer, space).
+<br/>
+
+#### Example:
+
+```javascript
+var obj = { name: "John", age: 30, city: "New York" };
+var jsonStr = JSON.stringify(obj);
+console.log(jsonStr);
+
+```
+#### Output:
+
+```json
+'{"name":"John","age":30,"city":"New York"}'
+
+```
+
+<p>These methods are essential in JavaScript for manipulating strings, arrays, and JSON data. split() and join() are used to work with string data and arrays. JSON.parse() is used to convert JSON strings to JavaScript objects, while JSON.stringify() converts JavaScript objects into JSON strings, facilitating data exchange between JavaScript and external systems that use JSON.</p>
+
+
+
+<br/>
 <br/>
   
 
