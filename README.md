@@ -487,9 +487,279 @@ The description column is suitable for holding a large volume of textual informa
 
 
 
+## Date and Time Data Types
+### 1. DATE Types
+
+<h4>DATE</h4>
+    - Stores date values in the format YYYY-MM-DD.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     date_col DATE
+);
+
+```
+The date_col column will store dates like '2023-07-19'.
 
 
--Numeric Data Types  
+### 2. TIME Types
+
+<h4>TIME</h4>
+    - Stores time values in the format HH:MM:SS.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     time_col TIME
+);
+
+```
+The time_col column will store time values like '14:30:00'.
+
+
+### 3. DATETIME  Types
+
+<h4>DATETIME</h4>
+    - Stores both date and time values in the format YYYY-MM-DD HH:MM:SS.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+    datetime_col DATETIME
+);
+
+```
+The datetime_col column will store values like '2023-07-19 14:30:00'.
+
+
+### 4. TIMESTAMP Types
+
+<h4>TIMESTAMP</h4>
+    - Stores a datetime value and represents the number of seconds since the Unix epoch ('1970-01-01 00:00:00' UTC). It also automatically updates itself to the current timestamp whenever the row is inserted or updated if not explicitly set.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     timestamp_col TIMESTAMP
+);
+
+```
+The timestamp_col column will store timestamps.
+
+
+### 5. YEAR  Types
+
+<h4>YEAR</h4>
+    - Stores year values in a four-digit format (e.g., 2023).
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     year_col YEAR
+);
+
+```
+The year_col column will store year values like '2023'.
+
+
+## Binary Data Types
+### 1. BINARY and VARBINARY
+
+<h4>BINARY</h4>
+    - A fixed-length binary string type that stores binary byte strings. It has a defined length and pads with trailing spaces.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     binary_data BINARY(10)
+);
+
+```
+
+
+<h4>VARBINARY</h4>
+    - A variable-length binary string type that stores binary byte strings up to a defined maximum length.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     varbinary_data VARBINARY(100)
+);
+
+```
+
+
+
+### 2. BLOB Types
+
+<h4>BLOB, MEDIUMBLOB, LONGBLOB</h4>
+    - These are used for storing larger amounts of binary data, with varying maximum lengths.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     blob_data BLOB
+);
+
+```
+The BLOB type can store binary data like images, documents, or other large files.
+
+
+
+
+## Other Data Types
+### 1. BOOLEAN Types
+
+<h4>BOOLEAN</h4>
+    - An alias for TINYINT(1), used to represent true/false values.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     is_active BOOLEAN
+);
+
+```
+In MySQL, BOOLEAN is an alias for TINYINT(1), where values 0 and 1 represent false and true, respectively.
+
+
+### 2. ENUM Types
+
+<h4>ENUM</h4>
+    - A column that can have one of a set of predefined values. Each value must be chosen from the list of specified values at the time of insertion.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     status ENUM('Active', 'Inactive', 'Pending')
+);
+
+```
+The status column allows only the values 'Active', 'Inactive', or 'Pending'.
+
+
+### 3. SET  Types
+
+<h4>SET</h4>
+    - Similar to ENUM, but it allows multiple values to be selected from a predefined set of values.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+    preferences SET('Email', 'SMS', 'Push Notification')
+);
+
+```
+The preferences column can store multiple values from the set 'Email', 'SMS', and 'Push Notification'.
+
+
+### 4. JSON Types
+
+<h4>JSON</h4>
+    - Stores JSON data.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+     json_data JSON
+);
+
+```
+The json_data column stores JSON-formatted data.
+
+
+### 5. GEOMETRY  Types
+
+<h4>GEOMETRY</h4>
+    - MySQL supports spatial data types to store geometric data like points, lines, polygons, etc., used in GIS (Geographic Information System) applications.
+    <br/>
+    Example:
+    <br/>
+
+```sql
+    CREATE TABLE example (
+      location GEOMETRY
+);
+
+```
+The location column stores geometric data representing locations or shapes.
+
+
+### Create database table for all data types.
+
+```sql
+-- Create a new database if it doesn't exist
+CREATE DATABASE IF NOT EXISTS SampleDB;
+
+-- Use the newly created database
+USE SampleDB;
+
+-- Create a table with columns of different data types
+CREATE TABLE SampleTable (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    tinyint_col TINYINT UNSIGNED,
+    smallint_col SMALLINT,
+    mediumint_col MEDIUMINT UNSIGNED,
+    int_col INT,
+    bigint_col BIGINT UNSIGNED,
+    decimal_col DECIMAL(10, 2),
+    float_col FLOAT,
+    double_col DOUBLE,
+    char_col CHAR(10),
+    varchar_col VARCHAR(255),
+    text_col TEXT,
+    binary_col BINARY(20),
+    varbinary_col VARBINARY(100),
+    blob_col BLOB,
+    date_col DATE,
+    time_col TIME,
+    datetime_col DATETIME,
+    timestamp_col TIMESTAMP,
+    year_col YEAR,
+    bool_col BOOLEAN,
+    enum_col ENUM('Option 1', 'Option 2', 'Option 3'),
+    set_col SET('Red', 'Green', 'Blue'),
+    json_col JSON,
+    geometry_col GEOMETRY
+);
+
+-- Alter table to add a new column
+ALTER TABLE SampleTable
+ADD COLUMN new_column INT;
+
+```
+
+
+
+<br/>
+<br/><br/>
+<br/>
+  
 
 
 <br/>
