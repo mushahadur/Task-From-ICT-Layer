@@ -27,6 +27,7 @@
 - [Vue js](#vue_js)
 - [Nuxt js basic](#nuxt_js)
 - [Datatable JS](#datatable_js)
+- [Server Side Rendering using Datatable JS](#server_side_rendering)
 
         
 # Introduction <a name="introduction"></a>
@@ -1384,16 +1385,77 @@ $(document).ready(function() {
 
 ```
 
+<br/>
 
+        
+# Server Side Rendering using Datatable JS <a name="server_side_rendering"></a>
 
+Server-Side Rendering (SSR) with DataTables involves loading and processing large datasets directly from the server. It's particularly useful when dealing with extensive data to avoid overwhelming the client-side resources or when you want to enable features like sorting, searching, and pagination with large datasets.
 
+## Example Steps for Server-Side Rendering:
 
+### 01. Server-Side Implementation:
 
+Implement a server-side script that handles data retrieval based on specific parameters like sorting, filtering, and pagination. This can be done using PHP, Node.js, Python, or any server-side language.<br/>
 
+Here's an example using PHP and MySQL:
+
+```php
+// server_side.php (PHP)
+<?php
+// Fetch data from the database based on DataTables parameters
+// Implement logic to get data according to sorting, filtering, and pagination
+// Return data as JSON to the DataTables request
+
+// Example:
+$data = array(
+    array('Name' => 'John', 'Age' => 30, 'Country' => 'USA'),
+    array('Name' => 'Alice', 'Age' => 25, 'Country' => 'Canada'),
+    // More data
+);
+
+echo json_encode(array(
+    'draw' => intval($_POST['draw']),
+    'recordsTotal' => count($data),
+    'recordsFiltered' => count($data), // For simplicity, consider unfiltered data count the same as total records
+    'data' => $data // Send data as an array
+));
+?>
+
+```
+
+### 2. Client-Side Configuration:
+Initialize DataTables on the client-side with server-side processing enabled:
+
+```javascript
+$(document).ready(function() {
+  $('#example').DataTable({
+    "processing": true,
+    "serverSide": true,
+    "ajax": {
+      "url": "server_side.php", // URL to your server-side script
+      "type": "POST"
+    },
+    // Other configurations like column definitions, sorting, etc.
+    "columns": [
+      { "data": "Name" },
+      { "data": "Age" },
+      { "data": "Country" }
+    ]
+  });
+});
+
+```
+Server-Side Rendering with DataTables involves fetching and processing data on the server based on DataTables' parameters and responding with the necessary dataset to render the table. This approach is beneficial for handling large datasets and providing advanced functionalities like sorting, pagination, and searching while maintaining better performance on the client-side. The server-side script should respond to DataTables' parameters and process data efficiently for optimal user experience.
 
 
 <br/>
-<br/>
+
+
+
+
+
+
 <br/>
 <br/>
 <br/>
