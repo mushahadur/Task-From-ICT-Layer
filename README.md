@@ -24,6 +24,9 @@
 - [Ajax Basic](#ajax_basic)
     - [Autocomplete using AJAX](#autocomplete_using_ajax)
 - [Append using raw js or jquery](#append_using)
+- [Vue js](#vue_js)
+- [Nuxt js basic](#nuxt_js)
+- [Datatable JS](#datatable_js)
 
         
 # Introduction <a name="introduction"></a>
@@ -1245,11 +1248,156 @@ Both raw JavaScript and jQuery `append()` methods accomplish similar tasks: addi
 
 <br/>
   
-
+  # Vue js Basic<a name="vue_js"></a>
 
 <br/>
 <br/>
 
+  # Nuxt js Basic<a name="nuxt_js"></a>
 
 
+  <br/>
+<br/>
+
+  # Datatable JS<a name="datatable_js"></a>
+
+DataTables is a powerful jQuery plugin used for creating interactive and feature-rich HTML tables with advanced functionalities like sorting, filtering, pagination, and more. It simplifies the process of presenting and managing large volumes of data in a tabular format on web pages.
+
+### Basic Usage:
+
+#### 1. Setting Up:
+Include the necessary dependencies in your HTML file:
+```html
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- DataTables CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+<!-- DataTables JavaScript -->
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+```
+#### 2. Creating a DataTable:
+Assuming you have an HTML table with an ID (`#example`), here's how you'd initialize a basic DataTable:
+
+```javascript
+$(document).ready(function() {
+  $('#example').DataTable(); // Initialize DataTable
+});
+
+```
+
+#### 3. Example Table Structure:
+
+```html
+<table id="example">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John</td>
+      <td>30</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>Alice</td>
+      <td>25</td>
+      <td>Canada</td>
+    </tr>
+    <!-- Additional rows -->
+  </tbody>
+</table>
+
+```
+
+#### 4.1. Pagination:
+Control the pagination settings of the table.
+
+`paging`: Enable or disable pagination.
+`pageLength`: Set the default number of rows per page.<br/>
+```javascript
+$(document).ready(function() {
+  $('#example').DataTable({
+    paging: true, // Enable pagination
+    pageLength: 10 // Set default page length to 10 rows
+  });
+});
+
+```
+
+#### 4.2 Sorting
+Customize sorting options.
+
+`order`: Define initial sorting columns and order.
+
+```javascript
+$(document).ready(function() {
+  $('#example').DataTable({
+    order: [[1, 'asc']] // Sort by the second column (index 1) in ascending order
+  });
+});
+
+```
+
+#### 4.3. Filtering/Search:
+
+Control search and filter settings.
+
+`searching`: Enable or disable search functionality.
+`searchDelay`: Set a delay (in milliseconds) before search is triggered after entering a keyword.
+
+```javascript
+$(document).ready(function() {
+  $('#example').DataTable({
+    searching: true, // Enable search
+    searchDelay: 500 // Trigger search after a delay of 500ms
+  });
+});
+
+```
+
+#### 4.4. Language Settings:
+
+Customize text and language used in the table.
+
+`language`: Customize the text for various table elements like pagination, search, and more.
+
+```javascript
+$(document).ready(function() {
+  $('#example').DataTable({
+    language: {
+      search: 'Search records:', // Custom search placeholder text
+      paginate: {
+        next: 'Next page', // Custom text for 'Next' button
+        previous: 'Previous page' // Custom text for 'Previous' button
+      },
+      // Additional language customization options
+    }
+  });
+});
+
+```
+
+
+
+
+
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
 
