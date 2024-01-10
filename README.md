@@ -1361,8 +1361,69 @@ This is a basic example of how to set up Vue Router and define routes within a V
 <br/>
 
   ## Vue js Lifecycle hooks <a name="vue_lifecycle"></a>
+Vue.js provides several lifecycle hooks that allow you to run code at specific stages in a component's lifecycle. These hooks provide opportunities to execute logic at various points, from creation to destruction of a component.
 
 <br/>
+
+ <img width="100%" src="images/lifecycle.png" align="center" alt="Vue js Lifecycle hooks" />
+<br/>
+
+#### Creation Hooks:
+`beforeCreate()`: Called synchronously immediately after the instance has been initialized, but before data observation and event/watcher setup. Data and events are not yet accessible.
+
+`created()`: Called synchronously after the instance is created. At this stage, the instance has finished processing the options, and the data is reactive.
+
+#### Mounting Hooks:
+`beforeMount()`: Called right before the instance gets mounted to the DOM, before `render()` is called.
+
+`mounted()`: Called after the instance has been mounted to the DOM. It's often used for initial data fetching or interacting with the DOM elements.
+
+#### Updating Hooks:
+`beforeUpdate()`: Called when the data changes, but before the DOM is re-rendered. You can modify the data before it's reflected in the DOM.
+
+`updated()`: Called after a data change causes the DOM to re-render. It's useful for performing DOM manipulations or additional actions after an update.
+
+#### Destruction Hooks:
+`beforeDestroy()`: Called right before a Vue instance is destroyed. It's useful for cleanup tasks like removing event listeners or timers.
+
+`destroyed()`: Called after a Vue instance has been destroyed. Any teardown logic or cleanup can be performed here.
+
+#### Error Handling Hook:
+errorCaptured(err, vm, info): Introduced in Vue 2.5.0. It's called when an error from any child component is captured. It's useful for handling errors in parent components.
+#### Example Usage:
+```javascript
+export default {
+  data() {
+    return {
+      message: 'Hello, Vue!'
+    };
+  },
+  beforeCreate() {
+    console.log('Before Create');
+  },
+  created() {
+    console.log('Created');
+  },
+  mounted() {
+    console.log('Mounted');
+  },
+  beforeUpdate() {
+    console.log('Before Update');
+  },
+  updated() {
+    console.log('Updated');
+  },
+  beforeDestroy() {
+    console.log('Before Destroy');
+  },
+  destroyed() {
+    console.log('Destroyed');
+  }
+};
+
+```
+
+<br/><br/><br/>
 
   ## Vue js API calling<a name="vue_api"></a>
 
