@@ -1860,6 +1860,51 @@ document.cookie = "key=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
 # Browser localstorage & session storage <a name="browser_localstorage_session"></a>
 
+<p dir="ltr"><b><strong>Difference Between Local Storage, Session Storage</strong></b><span>,</span><b><strong> And Cookies</strong></b></p>
+
+<table class="GFGEditorTheme__table">
+<colgroup>
+<col>
+<col>
+<col></colgroup>
+<thead>
+<tr>
+<th class="GFGEditorTheme__tableCell GFGEditorTheme__tableCellHeader" style="width: 233.333px;"><span>Local Storage</span></th>
+<th class="GFGEditorTheme__tableCell GFGEditorTheme__tableCellHeader" style="width: 233.333px;"><span>&nbsp;Session Storage</span></th>
+<th class="GFGEditorTheme__tableCell GFGEditorTheme__tableCellHeader" style="width: 233.333px;"><span>Cookies&nbsp;</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>The storage capacity of local storage is 5MB/10MB</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>The storage capacity of session storage is 5MB</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>The storage capacity of Cookies is 4KB</span></td>
+</tr>
+<tr>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>As it is not session-based, it must be deleted via javascript or manually</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>It’s session-based and works per window or tab. This means that data is stored only for the duration of a session, i.e., until the browser (or tab) is closed</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>Cookies expire based on the setting and working per tab and window&nbsp;</span></td>
+</tr>
+<tr>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>The client &nbsp;can only read local storage</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>The client can only read local storage</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>Both clients and servers can read and write the cookies</span></td>
+</tr>
+<tr>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>There is no transfer of data to the server</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>There is no transfer of data to the server</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>Data transfer to the server is exist</span></td>
+</tr>
+<tr>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>Supported by all browsers, including older ones.</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>Supported by all browsers, including older ones</span></td>
+<td class="GFGEditorTheme__tableCell" style="width: 233.333px;"><span>It is supported by all the browser including older browser</span></td>
+</tr>
+</tbody>
+</table>
+
+
+
 ## Store data and Remove data <a name="store_remove_data"></a>
 
 
