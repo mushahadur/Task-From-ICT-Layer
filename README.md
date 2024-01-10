@@ -35,7 +35,7 @@
         
 # Introduction <a name="introduction"></a>
 
-<p>The tasks you've outlined cover a comprehensive range of web development topics, from foundational PHP and database management to JavaScript, AJAX, Vue.js, Nuxt.js, and various data storage techniques like local storage and cookies. These tasks span server-side scripting, front-end development, and data handling, providing a holistic view of essential web development skills and technologies. Each task delves into specific areas such as sessions, database design, array manipulation, AJAX, front-end frameworks like Vue.js and Nuxt.js, and client-side storage mechanisms like local storage and cookies. These tasks collectively offer a broad understanding of web development fundamentals, client-server interaction, and modern JavaScript frameworks.</p> 
+<p>The tasks I've outlined cover a comprehensive range of web development topics, from foundational PHP and database management to JavaScript, AJAX, Vue.js, Nuxt.js, and various data storage techniques like local storage and cookies. These tasks span server-side scripting, front-end development, and data handling, providing a holistic view of essential web development skills and technologies. Each task delves into specific areas such as sessions, database design, array manipulation, AJAX, front-end frameworks like Vue.js and Nuxt.js, and client-side storage mechanisms like local storage and cookies. These tasks collectively offer a broad understanding of web development fundamentals, client-server interaction, and modern JavaScript frameworks.</p> 
 
 <br/>
 
@@ -99,7 +99,7 @@ $_SESSION = []; // Clear all session data
 
 ```
 
-<p> In raw PHP, you can use sessions and flash messages to handle user interactions and provide feedback. Here's an example of how you might implement session flashData in a simple PHP script:</p>
+<p> In raw PHP, I can use sessions and flash messages to handle user interactions and provide feedback. Here's an example of how I may implement session flashData in a simple PHP script:</p>
 
 ```php
 <?php
@@ -1197,7 +1197,7 @@ Now call the Student Controller method addStudent
 
 The `append()` method in both raw JavaScript and jQuery is used to add content or elements inside another element. It's commonly used to dynamically add HTML content or elements to a specified DOM element.
 <h3>Raw JavaScript Example:</h3>
-Suppose you have an HTML structure like this:
+Suppose I have an HTML structure like this:
 
 ```html
 <div id="container">
@@ -1222,7 +1222,7 @@ This JavaScript function `appendToContainer()` finds the element with the ID `co
 
 
 <h3>jQuery Example:</h3>
-If you're using jQuery, here's how you would achieve the same functionality:
+If I am using jQuery, here's how I would achieve the same functionality:
 HTML structure:
 
 ```html
@@ -1284,7 +1284,7 @@ Reactive Data Binding: Vue.js provides a reactive and two-way data binding betwe
 
   ## Vue js Router<a name="vue_router"></a>
 
- Vue Router is the official routing library for Vue.js. It allows you to build single-page applications by managing navigation between different views or pages within a Vue application.
+ Vue Router is the official routing library for Vue.js. It allows I to build single-page applications by managing navigation between different views or pages within a Vue application.
 
  ### Installation:
 If I am starting a new Vue project using Vue CLI, If I can not usually included then I install it separately:
@@ -1361,7 +1361,7 @@ This is a basic example of how to set up Vue Router and define routes within a V
 <br/>
 
   ## Vue js Lifecycle hooks <a name="vue_lifecycle"></a>
-Vue.js provides several lifecycle hooks that allow you to run code at specific stages in a component's lifecycle. These hooks provide opportunities to execute logic at various points, from creation to destruction of a component.
+Vue.js provides several lifecycle hooks that allow I to run code at specific stages in a component's lifecycle. These hooks provide opportunities to execute logic at various points, from creation to destruction of a component.
 
 <br/>
 
@@ -1379,7 +1379,7 @@ Vue.js provides several lifecycle hooks that allow you to run code at specific s
 `mounted()`: Called after the instance has been mounted to the DOM. It's often used for initial data fetching or interacting with the DOM elements.
 
 #### Updating Hooks:
-`beforeUpdate()`: Called when the data changes, but before the DOM is re-rendered. You can modify the data before it's reflected in the DOM.
+`beforeUpdate()`: Called when the data changes, but before the DOM is re-rendered. I can modify the data before it's reflected in the DOM.
 
 `updated()`: Called after a data change causes the DOM to re-render. It's useful for performing DOM manipulations or additional actions after an update.
 
@@ -1423,9 +1423,94 @@ export default {
 
 ```
 
-<br/><br/><br/>
+<br/><br/>
 
   ## Vue js API calling<a name="vue_api"></a>
+To make API calls in Vue.js, I can use JavaScript's fetch API or libraries like Axios or Vue Resource. Here's an example using Axios, a popular HTTP client for making AJAX requests:
+
+### Installation:
+First, install Axios in MY Vue.js project:
+
+```bash
+npm install axios
+```
+
+### Example of API Calling with Axios in Vue.js:
+
+#### 1. Import Axios in my Vue component:
+
+```javascript
+    <template>
+  <div class="grid">
+   <product
+    v-for="product in products"
+    :key="product.id"
+    :title="product.title"
+    :price="product.price"
+    :image="product.image"
+   />
+    
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+import Product from "./../components/Product.vue"
+export default{
+  components:{
+    Product,
+  },
+  data(){
+    return {
+      products:[],
+    };
+  },
+    mounted(){
+        axios
+          .get('https://fakestoreapi.com/products')
+          .then((response)=>{
+            this.products = response.data;
+            console.log(response);
+          })
+          .catch((e)=>{
+            console.log(e);
+          });
+    },
+};
+
+</script>
+
+```
+
+Using api fakestore api, this provides data title, price, image etc.(`https://fakestoreapi.com/products`)
+
+#### 2. Display the data in my template: path `src/components/Product.vue`
+
+ The `props` option is used to pass data from a parent component to a child component. It allows to define expected data and its types that the child component can receive from its parent.
+
+```html
+    <template>
+    <div  class="product">
+      <img :src="image" alt="">
+      <h3>{{ title }}</h3>
+      <h5>{{ price }}</h5>
+    </div>
+</template>
+
+<script>
+export default{
+    props:{
+        title: String,
+        price: String,
+        image:{
+            type:String,
+            required:true,
+        },
+    },
+};
+</script>
+```
+Using `props` helps maintain a unidirectional flow of data between components and ensures better encapsulation and reusability in Vue.js applications.
 
 <br/>
 
@@ -1442,7 +1527,7 @@ DataTables is a powerful jQuery plugin used for creating interactive and feature
 ### Basic Usage:
 
 #### 1. Setting Up:
-Include the necessary dependencies in your HTML file:
+Include the necessary dependencies in my HTML file:
 ```html
 <!-- jQuery -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -1455,7 +1540,7 @@ Include the necessary dependencies in your HTML file:
 
 ```
 #### 2. Creating a DataTable:
-Assuming you have an HTML table with an ID (`#example`), here's how you'd initialize a basic DataTable:
+Assuming I have an HTML table with an ID (`#example`), here's how I had initialize a basic DataTable:
 
 ```javascript
 $(document).ready(function() {
@@ -1565,7 +1650,7 @@ $(document).ready(function() {
         
 # Server Side Rendering using Datatable JS <a name="server_side_rendering"></a>
 
-Server-Side Rendering (SSR) with DataTables involves loading and processing large datasets directly from the server. It's particularly useful when dealing with extensive data to avoid overwhelming the client-side resources or when you want to enable features like sorting, searching, and pagination with large datasets.
+Server-Side Rendering (SSR) with DataTables involves loading and processing large datasets directly from the server. It's particularly useful when dealing with extensive data to avoid overwhelming the client-side resources or when I want to enable features like sorting, searching, and pagination with large datasets.
 
 ## Example Steps for Server-Side Rendering:
 
@@ -1608,7 +1693,7 @@ $(document).ready(function() {
     "processing": true,
     "serverSide": true,
     "ajax": {
-      "url": "server_side.php", // URL to your server-side script
+      "url": "server_side.php", // URL in my server-side script
       "type": "POST"
     },
     // Other configurations like column definitions, sorting, etc.
