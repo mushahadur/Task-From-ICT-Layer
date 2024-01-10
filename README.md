@@ -31,7 +31,7 @@
 - [Nuxt js basic](#nuxt_js)
 - [Datatable JS](#datatable_js)
 - [Server Side Rendering using Datatable JS](#server_side_rendering)
-- [JavaScript localStorage & Cookies](#localStorage_cookies)
+- [JavaScript localStorage and Cookies](#localStorage_cookies)
 
         
 # Introduction <a name="introduction"></a>
@@ -1187,8 +1187,78 @@ Now call the Student Controller method addStudent
 
 # Autocomplete using AJAX <a name="autocomplete_using_ajax"></a>
 
+ Implementing autocomplete using AJAX with jQuery involves making requests to a server as the user types in an input field and displaying matching suggestions dynamically.
+
+ ### Here input html
+
+ ```html
+<input type="text" id="search"  name="search" class="my-3 form-control" placeholder="Search here.." />
+<hr/>
+<div class="table-data">
+    <table class="table table-bordered table-striped table-hover" id="student-table">
+        <thead>
+        <tr>
+            <th scope="col">SI NO</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Course</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach($students as $student)
+            <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$student->name}}</td>
+                <td>{{$student->email}}</td>
+                <td>{{$student->course}}</td>
+                <td>
+                    <a href=""id="edit" class="btn btn-outline-success edit_student_form"
+                        data-bs-toggle="modal"
+                        data-bs-target="#editModal"
+                        data-id="{{$student->id}}"
+                        data-name = "{{$student->name}}"
+                        data-email = "{{$student->email}}"
+                        data-course = "{{$student->course}}"
+                    >
+                        <i class='fas fa-user-edit'></i>
+                    </a>
+                    <a  data-id ="{{$student->id}}" class="btn btn-outline-danger deleteStudent" >
+                        <i class="fa fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        @endforeach
+        </tbody>
+    </table>
+    {{$students->links() }}
+</div>
+ ```
+### JavaScript (jQuery):
+
+```javascript
+        $(document).ready(function (){
+        //Search function for student  --!!
+        $(document).on('keyup', function (e){
+            e.preventDefault();
+            let search_string =  $('#search').val();
+            $.ajax({
+                url:"{{route('searchStudent')}}",
+                method:"GET",
+                data:{search_string:search_string},
+                success:function (res){
+                    $(".table-data").html(res);
+                    if(res.status == 'Nothing_found'){
+                        $(".table-data").html('<span class="text-danger">'+'Search Nothing Found !ðŸ˜¥ðŸ˜¥'+'</span>');
+                    }
+                }
+            });
+        })
+
+    });
+```
 <br/>
-  
+  This is a basic example of implementing autocomplete using jQuery and AJAX. 
 
 
 <br/>
@@ -1773,9 +1843,11 @@ Removing Data from Cookies:
 document.cookie = "key=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 
 ```
+<br/>
 - Use localStorage for larger, persistent storage needs.
 - Use cookies for smaller data and when data needs to be sent to the server with every request.
-- Both localStorage and cookies are essential tools for storing data locally in the browser, with varying capacities and use cases. - - Choose based on your specific requirements regarding data size, persistence, and server interaction.
+- Both localStorage and cookies are essential tools for storing data locally in the browser, with varying capacities and use cases.
+- Choose based on your specific requirements regarding data size, persistence, and server interaction.
 
 <br/>
 <br/>
