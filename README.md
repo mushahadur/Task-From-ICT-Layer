@@ -1977,7 +1977,10 @@ sessionStorage.clear();
 - Scope: Both `localStorage` and `sessionStorage` have the same API for storing, retrieving, and removing data. However, sessionStorage data is scoped to the current session, while `localStorage` persists until explicitly removed.
 - Lifetime: Data stored in `localStorage` persists even after closing the browser and reopening it, whereas sessionStorage data is cleared when the session ends.
 
-## Localstorage using Vue js <a name="localstorage_using_vue"></a>
+
+<br>
+
+# Localstorage using Vue js <a name="localstorage_using_vue"></a>
 
 Use of `localStorage` in a Vue.js application to store and retrieve user preferences.
 ### Vue.js Example with localStorage:
@@ -2030,8 +2033,9 @@ export default {
 - When the component is mounted (`mounted()`), it checks `localStorage` for a stored theme and loads it. If no theme is found, it sets a default theme.
 - The `@change` event triggers the `saveTheme()` method when the user selects a theme, which then saves the selected theme to `localStorage`.
 
+<br>
 
-## Localstorage using Nuxt js <a name="localstorage_using_nuxt"></a>
+# Localstorage using Nuxt js <a name="localstorage_using_nuxt"></a>
 
 
 <br/>
