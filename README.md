@@ -32,6 +32,11 @@
 - [Datatable JS](#datatable_js)
 - [Server Side Rendering using Datatable JS](#server_side_rendering)
 - [JavaScript localStorage and Cookies](#localStorage_cookies)
+- [Browser localstorage & session storage](#browser_localstorage_session)
+    - [Store data and Remove data](#store_remove_data)
+    - [Localstorage using Vue js](#localstorage_using_vue)
+    - [Localstorage using Nuxt js](#localstorage_using_nuxt )
+
 
         
 # Introduction <a name="introduction"></a>
@@ -1784,6 +1789,7 @@ Server-Side Rendering with DataTables involves fetching and processing data on t
 
 # JavaScript localStorage & Cookies<a name="localStorage_cookies"></a>
 
+
 Both `localStorage` and cookies are used in JavaScript to store data locally in the user's browser, but they have differences in their usage and capabilities.
 
 ### localStorage:
@@ -1850,6 +1856,18 @@ document.cookie = "key=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 - Choose based on your specific requirements regarding data size, persistence, and server interaction.
 
 <br/>
+
+
+# Browser localstorage & session storage <a name="browser_localstorage_session"></a>
+
+## Store data and Remove data <a name="store_remove_data"></a>
+
+
+## Localstorage using Vue js <a name="localstorage_using_vue"></a>
+
+## Localstorage using Nuxt js <a name="localstorage_using_nuxt"></a>
+
+
 <br/>
 <br/>
 <br/>
