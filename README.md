@@ -1979,8 +1979,56 @@ sessionStorage.clear();
 
 ## Localstorage using Vue js <a name="localstorage_using_vue"></a>
 
-Store and Remove data in the browser's `localStorage` and `sessionStorage`.
+Use of `localStorage` in a Vue.js application to store and retrieve user preferences.
+### Vue.js Example with localStorage:
 
+```javascript
+<template>
+  <div>
+    <label for="theme">Select Theme:</label>
+    <select id="theme" v-model="selectedTheme" @change="saveTheme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+
+    <p>Selected Theme: {{ selectedTheme }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      selectedTheme: ''
+    };
+  },
+  mounted() {
+    // Load stored theme from localStorage on component mount
+    this.loadTheme();
+  },
+  methods: {
+    loadTheme() {
+      // Retrieve stored theme from localStorage
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme) {
+        this.selectedTheme = storedTheme;
+      } else {
+        // Set a default theme if no theme is stored
+        this.selectedTheme = 'light';
+      }
+    },
+    saveTheme() {
+      // Save selected theme to localStorage when changed
+      localStorage.setItem('theme', this.selectedTheme);
+    }
+  }
+};
+</script>
+
+```
+- This Vue.js component provides a dropdown menu (`<select>`) to choose between light and dark themes.
+- When the component is mounted (`mounted()`), it checks `localStorage` for a stored theme and loads it. If no theme is found, it sets a default theme.
+- The `@change` event triggers the `saveTheme()` method when the user selects a theme, which then saves the selected theme to `localStorage`.
 
 
 ## Localstorage using Nuxt js <a name="localstorage_using_nuxt"></a>
