@@ -31,7 +31,7 @@
 - [Nuxt js basic](#nuxt_js)
 - [Datatable JS](#datatable_js)
 - [Server Side Rendering using Datatable JS](#server_side_rendering)
-- [JavaScript localStorage and Cookies](#localStorage_cookies)
+- [JavaScript localStorage & Cookies](#localStorage_cookies)
 
         
 # Introduction <a name="introduction"></a>
@@ -1712,7 +1712,7 @@ Server-Side Rendering with DataTables involves fetching and processing data on t
 
 <br/>
 
-# JavaScript localStorage and Cookies<a name="localStorage_cookies"></a>
+# JavaScript localStorage & Cookies<a name="localStorage_cookies"></a>
 
 Both `localStorage` and cookies are used in JavaScript to store data locally in the user's browser, but they have differences in their usage and capabilities.
 
