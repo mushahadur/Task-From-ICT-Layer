@@ -25,6 +25,9 @@
     - [Autocomplete using AJAX](#autocomplete_using_ajax)
 - [Append using raw js or jquery](#append_using)
 - [Vue js](#vue_js)
+    - [Vue Router ](#vue_router)
+    - [Vue Lifecycle hooks ](#vue_lifecycle)
+    - [Vue API calling ](#vue_api)
 - [Nuxt js basic](#nuxt_js)
 - [Datatable JS](#datatable_js)
 - [Server Side Rendering using Datatable JS](#server_side_rendering)
@@ -1251,7 +1254,118 @@ Both raw JavaScript and jQuery `append()` methods accomplish similar tasks: addi
   
   # Vue js Basic<a name="vue_js"></a>
 
+Vue.js is a progressive JavaScript framework used for building user interfaces and single-page applications. It's designed to be incrementally adoptable, making it easy to integrate into existing projects.
+
+### Key Features:
+Reactive Data Binding: Vue.js provides a reactive and two-way data binding between the DOM and the data model, ensuring automatic UI updates when the data changes.
+
+- Component-Based Architecture: Vue.js emphasizes building applications using reusable and composable components, allowing developers to create complex interfaces efficiently.
+
+- Directives: Vue.js offers directives like v-if, v-for, v-bind, etc., allowing developers to add dynamic behavior to the DOM based on data changes.
+
+- Virtual DOM: Vue.js uses a virtual DOM to efficiently update the actual DOM. It minimizes DOM manipulations by identifying and applying only the necessary changes.
+
+- Lifecycle Hooks: Vue.js provides lifecycle hooks (created, mounted, updated, destroyed) enabling developers to execute code at specific stages of a component's lifecycle.
+
+- Vue Router: Vue.js comes with Vue Router, a library for managing application routing. It allows defining routes and navigation between different views in a Vue application.
+
+- Vuex (State Management): Vuex is the official state management library for Vue.js, facilitating centralized state management in applications with predictable state mutations.
+
+- Vue CLI: Vue CLI is a command-line interface tool for scaffolding Vue.js projects quickly. It simplifies project setup, configuration, and development workflows.
+
+### Advantages:
+- Approachable: Vue.js is easy to learn and allows gradual integration into existing projects.
+- Versatile: It's suitable for building small to large-scale applications and offers flexibility in architecture.
+- Performance: Its efficient virtual DOM and reactivity contribute to good performance in applications.
+- Ecosystem: Vue.js has a rich ecosystem with a variety of libraries, tools, and plugins.
+
 <br/>
+<br/>
+
+  ## Vue js Router<a name="vue_router"></a>
+
+ Vue Router is the official routing library for Vue.js. It allows you to build single-page applications by managing navigation between different views or pages within a Vue application.
+
+ ### Installation:
+If I am starting a new Vue project using Vue CLI, If I can not usually included then I install it separately:
+
+```bash
+npm install vue-router
+
+```
+
+#### Create a Router Instance
+
+`src/router/index.js`
+
+```javascript
+import { createRouter, createWebHistory } from "vue-router";
+
+const routes = [
+    {
+        path:"/",
+        name: "home",
+        component: () => import("../components/Home.vue"),
+    },
+    {
+        path:"/about",
+        name: "about",
+        component: () => import("../components/About.vue"),
+    },
+    {
+        path:"/blog/:id",
+        name: "blog-id",
+        component: () => import("../components/Blog.vue"),
+    },
+];
+
+export default createRouter({
+    history: createWebHistory('/'),
+    routes,
+});
+```
+
+
+#### Create Vue Components:
+`src/components/Home.vue`
+
+This page all html components
+
+```html
+<template>
+    <h2>Home Page</h2>
+    <p>THis is Home page</p>
+</template>>
+```
+
+`src/App.vue` this path call component vue
+
+This page call components `  <router-view>`
+
+```html
+<script setup>
+import HelloWorld from './components/HelloWorld.vue'
+import TheWelcome from './components/TheWelcome.vue'
+</script>
+
+<template>
+  
+
+  <main>
+    <router-view></router-view>
+  </main>
+</template>
+```
+This is a basic example of how to set up Vue Router and define routes within a Vue.js application
+
+<br/>
+
+  ## Vue js Lifecycle hooks <a name="vue_lifecycle"></a>
+
+<br/>
+
+  ## Vue js API calling<a name="vue_api"></a>
+
 <br/>
 
   # Nuxt js Basic<a name="nuxt_js"></a>
