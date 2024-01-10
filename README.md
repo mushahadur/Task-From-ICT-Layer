@@ -1903,12 +1903,85 @@ document.cookie = "key=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
 </tbody>
 </table>
 
+<br>
 
 
 ## Store data and Remove data <a name="store_remove_data"></a>
 
 
+`localStorage` and `sessionStorage` are two web storage APIs available in modern web browsers to store key-value pairs locally.
+
+### Browser localStorage:
+
+#### Storing Data:
+To store data in localStorage:
+
+```javascript
+// Store data
+localStorage.setItem('key', 'value');
+
+```
+
+#### Retrieving Data:
+To Retrieving  data in localStorage:
+
+```javascript
+// Retrieve data
+const data = localStorage.getItem('key');
+
+```
+
+#### Removing Data:
+To Removing data in localStorage:
+
+```javascript
+// Remove specific data
+localStorage.removeItem('key');
+
+// Clear all data
+localStorage.clear();
+
+```
+<br>
+
+### Browser sessionStorage:
+`sessionStorage` is similar to `localStorage`, but data stored in it is available only for the duration of the page session. It gets cleared when the session ends or when the browser is closed.
+
+#### Storing Data:
+Storing data in sessionStorage:
+```javascript
+// Store data
+sessionStorage.setItem('key', 'value');
+
+```
+#### Retrieving  Data:
+Retrieving data in sessionStorage:
+```javascript
+// Retrieve data
+const data = sessionStorage.getItem('key');
+
+```
+
+#### Removing Data:
+Removing data in sessionStorage:
+```javascript
+// Remove specific data
+sessionStorage.removeItem('key');
+
+// Clear all data
+sessionStorage.clear();
+
+```
+
+### Differences:
+- Scope: Both `localStorage` and `sessionStorage` have the same API for storing, retrieving, and removing data. However, sessionStorage data is scoped to the current session, while `localStorage` persists until explicitly removed.
+- Lifetime: Data stored in `localStorage` persists even after closing the browser and reopening it, whereas sessionStorage data is cleared when the session ends.
+
 ## Localstorage using Vue js <a name="localstorage_using_vue"></a>
+
+Store and Remove data in the browser's `localStorage` and `sessionStorage`.
+
+
 
 ## Localstorage using Nuxt js <a name="localstorage_using_nuxt"></a>
 
