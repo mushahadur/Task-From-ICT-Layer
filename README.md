@@ -31,6 +31,7 @@
 - [Nuxt js basic](#nuxt_js)
 - [Datatable JS](#datatable_js)
 - [Server Side Rendering using Datatable JS](#server_side_rendering)
+- [JavaScript localStorage and Cookies](#localStorage_cookies)
 
         
 # Introduction <a name="introduction"></a>
@@ -1711,10 +1712,70 @@ Server-Side Rendering with DataTables involves fetching and processing data on t
 
 <br/>
 
+# JavaScript localStorage and Cookies<a name="localStorage_cookies"></a>
 
+Both `localStorage` and cookies are used in JavaScript to store data locally in the user's browser, but they have differences in their usage and capabilities.
 
+### localStorage:
+`localStorage` allows you to store key-value pairs locally in the browser with no expiration date, meaning the data persists even after the browser is closed. It provides greater storage capacity compared to cookies.
 
+Storing Data in `localStorage`:
 
+```javascript
+    // Store data in localStorage
+localStorage.setItem('key', 'value');
+
+```
+Retrieving Data from `localStorage`:
+
+```javascript
+// Retrieve data from localStorage
+const value = localStorage.getItem('key');
+
+```
+Removing Data from `localStorage`:
+```javascript
+// Remove specific data from localStorage
+localStorage.removeItem('key');
+
+// Clear all data from localStorage
+localStorage.clear();
+
+```
+
+### Cookies:
+Cookies are also used for storing data but have a few differences:
+
+- Cookies have an expiration date.
+- They have a smaller storage capacity compared to `localStorage`.
+- Cookies are sent with every HTTP request to the server, both for the domain that set the cookie and any subdomains.
+
+Storing Data in Cookies:
+
+```javascript
+// Store data in a cookie (expiration date in UTC format)
+document.cookie = "key=value; expires=Thu, 01 Jan 2023 00:00:00 UTC; path=/";
+
+```
+Retrieving Data from Cookies:
+
+```javascript
+// Retrieve data from cookies
+const cookieValue = document.cookie
+  .split('; ')
+  .find(row => row.startsWith('key='))
+  .split('=')[1];
+
+```
+Removing Data from Cookies:
+```javascript
+// Expire a cookie by setting an old date
+document.cookie = "key=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+
+```
+- Use localStorage for larger, persistent storage needs.
+- Use cookies for smaller data and when data needs to be sent to the server with every request.
+- Both localStorage and cookies are essential tools for storing data locally in the browser, with varying capacities and use cases. - - Choose based on your specific requirements regarding data size, persistence, and server interaction.
 
 <br/>
 <br/>
