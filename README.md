@@ -1724,7 +1724,7 @@ export default {
 export default {
   async fetch() {
     try {
-      const response = await this.$axios.$get('https://api.example.com/data');
+      const response = await this.$axios.$get('https://fakestoreapi.com/products');
       this.apiData = response;
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -1753,7 +1753,7 @@ export default {
   methods: {
     async fetchData() {
       try {
-        const response = await this.$axios.$get('https://api.example.com/data');
+        const response = await this.$axios.$get('https://fakestoreapi.com/products');
         this.apiData = response;
       } catch (error) {
         console.error('Error fetching data:', error);
