@@ -1592,6 +1592,21 @@ Using `props` helps maintain a unidirectional flow of data between components an
 
   # Nuxt js Basic<a name="nuxt_js"></a>
 
+Nuxt.js is a powerful Vue.js framework that simplifies the development of modern web applications. With a focus on simplicity and convention over configuration, Nuxt.js provides an intuitive and flexible structure for building Vue applications. Its file-based routing system eliminates the need for complex configurations, making it easy to create dynamic and static pages effortlessly. Leveraging server-side rendering (SSR), Nuxt.js enhances performance and SEO optimization. It integrates seamlessly with Vue.js, allowing developers to benefit from Vue's reactive data-binding and component-based architecture. Nuxt.js supports various features like layouts, middleware, plugins, and a robust configuration system, offering developers a comprehensive toolkit for building scalable and maintainable applications. Whether you're aiming for server-side rendering, static site generation, or a traditional single-page application, Nuxt.js adapts to different deployment scenarios, making it a versatile choice for web developers. With an active community and extensive documentation, Nuxt.js empowers developers to efficiently create web applications that are performant, SEO-friendly, and easy to maintain.
+
+
+## Differences between Nuxt.js and Vue.js
+Vue.js is a popular JavaScript framework that's used for building user interfaces. It's lightweight, easy to use, and has a large community of developers. Nuxt.js, on the other hand, is a framework built on top of Vue.js that provides a more opinionated approach to building web applications.
+
+One of the key differences between Nuxt.js and Vue.js is that Nuxt.js provides a server-side rendering (SSR) feature out of the box. This means that the initial render of your application is done on the server, which can improve SEO and performance. Vue.js, on the other hand, is a client-side framework that relies on JavaScript to render the application in the user's browser.
+
+Another difference between Nuxt.js and Vue.js is the file structure. Nuxt.js has a predefined file structure that helps developers organize their code in a logical and consistent way. This can be helpful for larger projects where code organization can become a challenge. Vue.js, on the other hand, gives developers more flexibility in terms of file structure, which can be beneficial for smaller projects or for developers who prefer more control over their code.
+
+Finally, Nuxt.js provides a number of built-in features that can help developers get up and running quickly, including routing, Vuex store, and middleware. Vue.js provides these features as separate packages, which can be installed as needed.
+
+<table><thead><tr><th>Feature</th><th>Vue.js</th><th>Nuxt.js</th></tr></thead><tbody><tr><td><strong>Routing</strong></td><td>Vue Router</td><td>File-based routing system</td></tr><tr><td><strong>Server-Side Rendering (SSR)</strong></td><td>Not built-in, can be added separately</td><td>Built-in support for SSR</td></tr><tr><td><strong>File Structure</strong></td><td>Flexible, no strict convention</td><td>Convention-based, follows a structure</td></tr><tr><td><strong>Layouts</strong></td><td>Can be implemented manually</td><td>Automatic layout system</td></tr><tr><td><strong>Configuration</strong></td><td>Manual configuration</td><td>Convention-based, configurable</td></tr><tr><td><strong>Plugins</strong></td><td>Integrated but manual</td><td>Integrated and automatic</td></tr><tr><td><strong>Middleware</strong></td><td>Can be added manually</td><td>Integrated middleware system</td></tr><tr><td><strong>Deployment</strong></td><td>Requires additional configuration</td><td>Easier deployment with fewer settings</td></tr><tr><td><strong>SEO Optimization</strong></td><td>Manual implementation</td><td>Improved SEO with SSR</td></tr></tbody></table>
+
+
 
   <br/>
 <br/>
